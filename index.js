@@ -18,7 +18,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => console.log("connection successful"))
-
+  .catch((err) => console.log(err));
 
 
   const server = app.listen(APP_PORT, () => {
