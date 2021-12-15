@@ -1,4 +1,5 @@
 const app = require("./app");
+const cloudinary = require("cloudinary");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv")
 //config
@@ -20,6 +21,12 @@ mongoose
   .then(() => console.log("connection successful"))
   .catch((err) => console.log(err));
 
+  cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+  });
+  
 
   const server = app.listen(APP_PORT, () => {
     console.log(`Example app listening at http://localhost:${APP_PORT}`)
