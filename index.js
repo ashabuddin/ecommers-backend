@@ -12,6 +12,7 @@ process.on("uncaughtException", (err) => {
   console.log(`Shutting down the server due to Uncaught Exception`);
   process.exit(1);
 });
+
 //database connected
 mongoose
   .connect(process.env.MONGO_URL, {
