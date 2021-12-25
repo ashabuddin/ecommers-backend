@@ -43,7 +43,7 @@ req.body.user = req.user.id
 // Get All Product
 exports.getAllProducts = catchAsyncErrors(async (req, res,next) => {
   
-  const resultPerPage = 16
+  const resultPerPage =36
   const productsCount = await Product.countDocuments();
   const apiFeature= new ApiFeatures(Product.find(), req.query)
   .search()
