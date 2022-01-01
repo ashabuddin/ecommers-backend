@@ -5,7 +5,7 @@ const dotenv = require("dotenv")
 //config
 dotenv.config();
 
-const APP_PORT = 5000
+const port = 5000
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
   console.log(`Error: ${err.message}`);
@@ -29,9 +29,7 @@ mongoose
   });
   
 
-  const server = app.listen(APP_PORT, () => {
-    console.log(`Example app listening at http://localhost:${APP_PORT}`)
-  })
+  app.listen(process.env.PORT || port)
 
   // Unhandled Promise Rejection
 process.on("unhandledRejection", (err) => {
